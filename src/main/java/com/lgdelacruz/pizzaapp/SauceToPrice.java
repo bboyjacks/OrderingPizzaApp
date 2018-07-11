@@ -1,3 +1,5 @@
+package com.lgdelacruz.pizzaapp;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -6,7 +8,7 @@ public class SauceToPrice {
     private static SauceToPrice m_sauce_to_price;
 
     /*
-     * Default SauceToPrice map
+     * Default com.lgdelacruz.pizzaapp.SauceToPrice map
      */
     private SauceToPrice()
     {
@@ -18,7 +20,7 @@ public class SauceToPrice {
     /*
      * Singleton instance of sauce to price
      *
-     * @return a single instance of SauceToPrice
+     * @return a single instance of com.lgdelacruz.pizzaapp.SauceToPrice
      */
     public static SauceToPrice Instance()
     {

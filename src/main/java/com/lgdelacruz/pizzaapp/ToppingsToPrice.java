@@ -1,3 +1,5 @@
+package com.lgdelacruz.pizzaapp;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -8,7 +10,7 @@ public class ToppingsToPrice {
 
 
     /*
-     * Default ToppingsToPrice List
+     * Default com.lgdelacruz.pizzaapp.ToppingsToPrice List
      */
     private ToppingsToPrice()
     {
@@ -22,7 +24,7 @@ public class ToppingsToPrice {
     /*
      * Singleton instance of toppings to price
      *
-     * @return a single instance of ToppingsToPrice
+     * @return a single instance of com.lgdelacruz.pizzaapp.ToppingsToPrice
      */
     public static ToppingsToPrice Instance()
     {

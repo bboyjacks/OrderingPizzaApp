@@ -1,3 +1,5 @@
+package com.lgdelacruz.pizzaapp;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -6,7 +8,7 @@ public class SizeToPrice {
     private static SizeToPrice m_size_to_price;
 
     /*
-     * Default SizeToPrice List
+     * Default com.lgdelacruz.pizzaapp.SizeToPrice List
      */
     private SizeToPrice()
     {
@@ -18,7 +20,7 @@ public class SizeToPrice {
     /*
      * Singleton instance of pizza size to price
      *
-     * @return a single instance of SizeToPrice
+     * @return a single instance of com.lgdelacruz.pizzaapp.SizeToPrice
      */
     public static SizeToPrice Instance()
     {
