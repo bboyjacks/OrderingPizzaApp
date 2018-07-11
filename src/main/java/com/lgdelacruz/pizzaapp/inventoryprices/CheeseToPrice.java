@@ -1,14 +1,16 @@
-package com.lgdelacruz.pizzaapp;
+package com.lgdelacruz.pizzaapp.inventoryprices;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class CheeseToPrice {
+
+
     private HashMap<String, Double> m_cheese_to_price_map = new HashMap<String, Double>();
     private static CheeseToPrice m_cheese_to_price;
 
     /*
-     * Default com.lgdelacruz.pizzaapp.CheeseToPrice List
+     * Default com.lgdelacruz.pizzaapp.inventoryprices.CheeseToPrice List
      */
     private CheeseToPrice()
     {
@@ -20,7 +22,7 @@ public class CheeseToPrice {
     /*
      * Singleton instance of cheeses to price
      *
-     * @return a single instance of com.lgdelacruz.pizzaapp.CheeseToPrice
+     * @return a single instance of com.lgdelacruz.pizzaapp.inventoryprices.CheeseToPrice
      */
     public static CheeseToPrice Instance()
     {
@@ -66,5 +68,16 @@ public class CheeseToPrice {
     public Double GetCheesePrice(String _cheese)
     {
         return m_cheese_to_price_map.get(_cheese);
+    }
+
+
+
+    /*
+     * Gets cheese to price map for get request
+     *
+     * @return the cheese to price map
+     */
+    public HashMap<String, Double> getM_cheese_to_price_map() {
+        return m_cheese_to_price_map;
     }
 }

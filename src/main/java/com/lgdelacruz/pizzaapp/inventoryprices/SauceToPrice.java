@@ -1,14 +1,15 @@
-package com.lgdelacruz.pizzaapp;
+package com.lgdelacruz.pizzaapp.inventoryprices;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class SauceToPrice {
+
     private HashMap<String, Double> m_sauce_to_price_map = new HashMap<String, Double>();
     private static SauceToPrice m_sauce_to_price;
 
     /*
-     * Default com.lgdelacruz.pizzaapp.SauceToPrice map
+     * Default com.lgdelacruz.pizzaapp.inventoryprices.SauceToPrice map
      */
     private SauceToPrice()
     {
@@ -20,7 +21,7 @@ public class SauceToPrice {
     /*
      * Singleton instance of sauce to price
      *
-     * @return a single instance of com.lgdelacruz.pizzaapp.SauceToPrice
+     * @return a single instance of com.lgdelacruz.pizzaapp.inventoryprices.SauceToPrice
      */
     public static SauceToPrice Instance()
     {
@@ -65,4 +66,15 @@ public class SauceToPrice {
     {
         return m_sauce_to_price_map.get(_sauce);
     }
+
+
+    /*
+     * Gets sauce to price map for get request
+     *
+     * @return the sauce to price map
+     */
+    public HashMap<String, Double> getM_sauce_to_price_map() {
+        return m_sauce_to_price_map;
+    }
+
 }

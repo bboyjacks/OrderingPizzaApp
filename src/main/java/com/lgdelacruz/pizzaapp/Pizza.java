@@ -1,5 +1,10 @@
 package com.lgdelacruz.pizzaapp;
 
+import com.lgdelacruz.pizzaapp.inventoryprices.CheeseToPrice;
+import com.lgdelacruz.pizzaapp.inventoryprices.SauceToPrice;
+import com.lgdelacruz.pizzaapp.inventoryprices.SizeToPrice;
+import com.lgdelacruz.pizzaapp.inventoryprices.ToppingsToPrice;
+
 import java.util.ArrayList;
 
 public class Pizza {

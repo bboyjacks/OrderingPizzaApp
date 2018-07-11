@@ -1,16 +1,17 @@
-package com.lgdelacruz.pizzaapp;
+package com.lgdelacruz.pizzaapp.inventoryprices;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class ToppingsToPrice {
+
     private HashMap<String, Double> m_topping_to_price_map = new HashMap<String, Double>();
     private static ToppingsToPrice m_toppings_to_price;
 
 
 
     /*
-     * Default com.lgdelacruz.pizzaapp.ToppingsToPrice List
+     * Default com.lgdelacruz.pizzaapp.inventoryprices.ToppingsToPrice List
      */
     private ToppingsToPrice()
     {
@@ -24,7 +25,7 @@ public class ToppingsToPrice {
     /*
      * Singleton instance of toppings to price
      *
-     * @return a single instance of com.lgdelacruz.pizzaapp.ToppingsToPrice
+     * @return a single instance of com.lgdelacruz.pizzaapp.inventoryprices.ToppingsToPrice
      */
     public static ToppingsToPrice Instance()
     {
@@ -75,5 +76,15 @@ public class ToppingsToPrice {
     public Boolean IsToppingAnOption(String _topping)
     {
         return m_topping_to_price_map.containsKey(_topping);
+    }
+
+
+    /*
+     * Gets topping to price map for get request
+     *
+     * @return the topping to price map
+     */
+    public HashMap<String, Double> getM_topping_to_price_map() {
+        return m_topping_to_price_map;
     }
 }

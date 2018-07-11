@@ -1,9 +1,15 @@
 package com.lgdelacruz.pizzaapp;
 
+import com.lgdelacruz.pizzaapp.inventoryprices.CheeseToPrice;
+import com.lgdelacruz.pizzaapp.inventoryprices.SauceToPrice;
+import com.lgdelacruz.pizzaapp.inventoryprices.SizeToPrice;
+import com.lgdelacruz.pizzaapp.inventoryprices.ToppingsToPrice;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicLong;
@@ -13,6 +19,31 @@ import java.util.concurrent.atomic.AtomicLong;
 public class PizzaOrderController {
 
     private final AtomicLong counter = new AtomicLong();
+
+    @RequestMapping("/sizes")
+    @ResponseBody
+    public SizeToPrice size() {
+        return SizeToPrice.Instance();
+    }
+
+    @RequestMapping("/sauce")
+    @ResponseBody
+    public SauceToPrice sauce() {
+        return SauceToPrice.Instance();
+    }
+
+    @RequestMapping("/topping")
+    @ResponseBody
+    public ToppingsToPrice topping() {
+        return ToppingsToPrice.Instance();
+    }
+
+    @RequestMapping("/cheese")
+    @ResponseBody
+    public CheeseToPrice cheese() {
+        return CheeseToPrice.Instance();
+    }
+
 
     @GetMapping("/")
     public String LoadMainPage() {
