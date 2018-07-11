@@ -7,7 +7,7 @@ public class ToppingStringParser {
 
     public static ArrayList<String> ParseToppingStringsList(String _toppings)
     {
-        String[] toppings_array = _toppings.split(",");
+        String[] toppings_array = _toppings.replaceAll("\\s+","").split(",");
         return new ArrayList<>(Arrays.asList(toppings_array));
     }
 }
