@@ -11,7 +11,7 @@ public class ToppingsToPrice {
 
 
     /*
-     * Default com.lgdelacruz.pizzaapp.inventoryprices.ToppingsToPrice List
+     * Default ToppingsToPrice List
      */
     private ToppingsToPrice()
     {
@@ -25,7 +25,7 @@ public class ToppingsToPrice {
     /*
      * Singleton instance of toppings to price
      *
-     * @return a single instance of com.lgdelacruz.pizzaapp.inventoryprices.ToppingsToPrice
+     * @return a single instance of ToppingsToPrice
      */
     public static ToppingsToPrice Instance()
     {

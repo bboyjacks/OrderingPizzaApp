@@ -21,7 +21,7 @@ public class SauceToPrice {
     /*
      * Singleton instance of sauce to price
      *
-     * @return a single instance of com.lgdelacruz.pizzaapp.inventoryprices.SauceToPrice
+     * @return a single instance of SauceToPrice
      */
     public static SauceToPrice Instance()
     {

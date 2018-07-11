@@ -20,7 +20,7 @@ public class SizeToPrice {
     /*
      * Singleton instance of pizza size to price
      *
-     * @return a single instance of com.lgdelacruz.pizzaapp.inventoryprices.SizeToPrice
+     * @return a single instance of SizeToPrice
      */
     public static SizeToPrice Instance()
     {

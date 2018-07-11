@@ -10,7 +10,7 @@ public class CheeseToPrice {
     private static CheeseToPrice m_cheese_to_price;
 
     /*
-     * Default com.lgdelacruz.pizzaapp.inventoryprices.CheeseToPrice List
+     * Default CheeseToPrice List
      */
     private CheeseToPrice()
     {
@@ -22,7 +22,7 @@ public class CheeseToPrice {
     /*
      * Singleton instance of cheeses to price
      *
-     * @return a single instance of com.lgdelacruz.pizzaapp.inventoryprices.CheeseToPrice
+     * @return a single instance of CheeseToPrice
      */
     public static CheeseToPrice Instance()
     {
