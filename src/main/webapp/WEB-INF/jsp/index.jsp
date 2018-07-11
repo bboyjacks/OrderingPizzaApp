@@ -26,13 +26,20 @@
             console.log(json_response);
 
             var sizes_tag = document.getElementById("sizes");
+            var select_sizes_tag = document.getElementById("select-size");
 
             for (var key in json_response.m_size_to_price_map) {
                 if (json_response.m_size_to_price_map.hasOwnProperty(key)) {
                     var node = document.createElement("li");
-                    var textnode = document.createTextNode(key);
-                    node.appendChild(textnode);
+                    var textnode1 = document.createTextNode(key);
+                    node.appendChild(textnode1);
                     sizes_tag.appendChild(node);
+
+                    var select_node = document.createElement("option");
+                    select_node.setAttribute("value", key);
+                    var textnode2 = document.createTextNode(key);
+                    select_node.appendChild(textnode2);
+                    select_sizes_tag.appendChild(select_node);
                 }
             }
         });
@@ -42,14 +49,21 @@
             var json_response = JSON.parse(response);
             console.log(json_response);
 
-            var sizes_tag = document.getElementById("sauce");
+            var sauce_tag = document.getElementById("sauce");
+            var select_sauce_tag = document.getElementById("select-sauce");
 
             for (var key in json_response.m_sauce_to_price_map) {
                 if (json_response.m_sauce_to_price_map.hasOwnProperty(key)) {
                     var node = document.createElement("li");
-                    var textnode = document.createTextNode(key);
-                    node.appendChild(textnode);
-                    sizes_tag.appendChild(node);
+                    var textnode1 = document.createTextNode(key);
+                    node.appendChild(textnode1);
+                    sauce_tag.appendChild(node);
+
+                    var select_node = document.createElement("option");
+                    select_node.setAttribute("value", key);
+                    var textnode2 = document.createTextNode(key);
+                    select_node.appendChild(textnode2);
+                    select_sauce_tag.appendChild(select_node);
                 }
             }
         });
@@ -59,14 +73,14 @@
             var json_response = JSON.parse(response);
             console.log(json_response);
 
-            var sizes_tag = document.getElementById("topping");
+            var toppings_tag = document.getElementById("topping");
 
             for (var key in json_response.m_topping_to_price_map) {
                 if (json_response.m_topping_to_price_map.hasOwnProperty(key)) {
                     var node = document.createElement("li");
                     var textnode = document.createTextNode(key);
                     node.appendChild(textnode);
-                    sizes_tag.appendChild(node);
+                    toppings_tag.appendChild(node);
                 }
             }
         });
@@ -76,14 +90,21 @@
             var json_response = JSON.parse(response);
             console.log(json_response);
 
-            var sizes_tag = document.getElementById("cheese");
+            var cheese_tag = document.getElementById("cheese");
+            var select_cheese_tag = document.getElementById("select-cheese");
 
             for (var key in json_response.m_cheese_to_price_map) {
                 if (json_response.m_cheese_to_price_map.hasOwnProperty(key)) {
                     var node = document.createElement("li");
-                    var textnode = document.createTextNode(key);
-                    node.appendChild(textnode);
-                    sizes_tag.appendChild(node);
+                    var textnode1 = document.createTextNode(key);
+                    node.appendChild(textnode1);
+                    cheese_tag.appendChild(node);
+
+                    var select_node = document.createElement("option");
+                    select_node.setAttribute("value", key);
+                    var textnode2 = document.createTextNode(key);
+                    select_node.appendChild(textnode2);
+                    select_cheese_tag.appendChild(select_node);
                 }
             }
         });
@@ -108,24 +129,15 @@
     <p>Order:</p>
     <form action="/order" method="get">
         <p>Sizes:</p>
-        <select name="size">
-            <option value="small">small</option>
-            <option value="medium">medium</option>
-            <option value="large">large</option>
+        <select id="select-size" name="size">
         </select>
         <br>
         <p>Sauce:</p>
-        <select name="sauce">
-            <option value="marinara">marinara</option>
-            <option value="pesto">pesto</option>
-            <option value="alfredo">alfredo</option>
+        <select id="select-sauce" name="sauce">
         </select>
         <br>
         <p>Cheese:</p>
-        <select name="cheese">
-            <option value="pepperjack">pepperjack</option>
-            <option value="swiss">swiss</option>
-            <option value="cheddar">cheddar</option>
+        <select id="select-cheese" name="cheese">
         </select>
         <br>
         <p>Topping:</p>
