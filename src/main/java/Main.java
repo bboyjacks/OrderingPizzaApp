@@ -20,12 +20,20 @@ public class Main {
         System.out.println("Pizza cheese: " + _pizza.GetCheese());
         System.out.println("Pizza sauce: " + _pizza.GetSauce());
         System.out.println("Pizza toppings: " + ListToppings(_pizza.GetToppings()));
-
+        System.out.println("Pizza price: $" + _pizza.GetPrice());
     }
 
     public static void main(String[] args)
     {
-        Pizza pizza = new Pizza(1);
+        Pizza pizza = new Pizza.PizzaBuilder(1)
+                .SetSize("medium")
+                .SetCheese("swiss")
+                .SetSauce("pesto")
+                .AddTopping("pepperoni")
+                .AddTopping("ham")
+                .AddTopping("pineapple")
+                .Build();
+
         DisplayPizza(pizza);
     }
 }

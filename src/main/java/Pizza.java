@@ -8,13 +8,67 @@ public class Pizza {
     private Integer m_order_number;
     private ArrayList<String> m_toppings = new ArrayList<String>();
 
-    public Pizza(Integer _order_number)
+    private Pizza()
     {
-        // Initialize a default pizza to the first of every inventory
-        SetSize(SizeToPrice.Instance().GetSizes().get(0));
-        SetCheese(CheeseToPrice.Instance().GetCheeses().get(0));
-        SetSauce(SauceToPrice.Instance().GetSauces().get(0));
-        m_order_number = _order_number;
+    }
+
+    public static class PizzaBuilder
+    {
+        private String m_cheese;
+        private Double m_price = 0.0;
+        private String m_sauce;
+        private String m_size;
+        private Integer m_order_number;
+        private ArrayList<String> m_toppings = new ArrayList<String>();
+
+        PizzaBuilder(Integer _order_number)
+        {
+            // Initialize a default pizza to the first of every inventory
+            SetSize(SizeToPrice.Instance().GetSizes().get(0));
+            SetCheese(CheeseToPrice.Instance().GetCheeses().get(0));
+            SetSauce(SauceToPrice.Instance().GetSauces().get(0));
+            this.m_order_number = _order_number;
+        }
+
+        public PizzaBuilder SetSize(String _size)
+        {
+            this.m_size = _size;
+            this.m_price += SizeToPrice.Instance().GetSizePrice(_size);
+            return this;
+        }
+
+        public PizzaBuilder SetCheese(String _cheese)
+        {
+            this.m_cheese = _cheese;
+            this.m_price += CheeseToPrice.Instance().GetCheesePrice(_cheese);
+            return this;
+        }
+
+        public PizzaBuilder SetSauce(String _sauce)
+        {
+            this.m_sauce = _sauce;
+            this.m_price += SauceToPrice.Instance().GetSaucePrice(_sauce);
+            return this;
+        }
+
+        public PizzaBuilder AddTopping(String _topping)
+        {
+            this.m_toppings.add(_topping);
+            this.m_price += ToppingsToPrice.Instance().GetToppingPrice(_topping);
+            return this;
+        }
+
+        public Pizza Build()
+        {
+            Pizza pizza = new Pizza();
+            pizza.m_cheese = this.m_cheese;
+            pizza.m_price = this.m_price;
+            pizza.m_sauce = this.m_sauce;
+            pizza.m_size = this.m_size;
+            pizza.m_order_number = this.m_order_number;
+            pizza.m_toppings = this.m_toppings;
+            return pizza;
+        }
     }
 
     public Integer GetOrderNumber()
@@ -42,36 +96,9 @@ public class Pizza {
         return m_toppings;
     }
 
-    private Double GetPrice()
+    public Double GetPrice()
     {
         return m_price;
     }
 
-    public Pizza SetSize(String _size)
-    {
-        m_size = _size;
-        m_price += SizeToPrice.Instance().GetSizePrice(_size);
-        return this;
-    }
-
-    public Pizza SetCheese(String _cheese)
-    {
-        m_cheese = _cheese;
-        m_price += CheeseToPrice.Instance().GetCheesePrice(_cheese);
-        return this;
-    }
-
-    public Pizza SetSauce(String _sauce)
-    {
-        m_sauce = _sauce;
-        m_price += SauceToPrice.Instance().GetSaucePrice(_sauce);
-        return this;
-    }
-
-    public Pizza AddTopping(String _topping)
-    {
-        m_toppings.add(_topping);
-        m_price += ToppingsToPrice.Instance().GetToppingPrice(_topping);
-        return this;
-    }
 }
