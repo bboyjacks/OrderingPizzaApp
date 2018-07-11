@@ -1,4 +1,4 @@
-package com.lgdelacruz.pizzaapp.controllers;
+package com.lgdelacruz.pizzaapp;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,8 +10,8 @@ public class PizzaOrderController {
 
     @GetMapping("/")
     public String getView(Model model) {
-        model.addAttribute("msg", "Hello there, This message has been injected from the controller method");
-        return "index.jsp";
+        model.addAttribute("msg", "Hello there, This message has been injected from the control ler method");
+        return "index";
     }
 
 }
