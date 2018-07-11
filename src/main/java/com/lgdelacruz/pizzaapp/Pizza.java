@@ -7,7 +7,7 @@ public class Pizza {
     private Double m_price = 0.0;
     private String m_sauce;
     private String m_size;
-    private Integer m_order_number;
+    private long m_order_number;
     private ArrayList<String> m_toppings = new ArrayList<String>();
 
     private Pizza()
@@ -20,10 +20,10 @@ public class Pizza {
         private Double m_price = 0.0;
         private String m_sauce;
         private String m_size;
-        private Integer m_order_number;
+        private long m_order_number;
         private ArrayList<String> m_toppings = new ArrayList<String>();
 
-        PizzaBuilder(Integer _order_number)
+        PizzaBuilder(long _order_number)
         {
             // Initialize a default pizza to the first of every inventory
             SetSize(SizeToPrice.Instance().GetSizes().get(0));
@@ -73,7 +73,7 @@ public class Pizza {
         }
     }
 
-    public Integer GetOrderNumber()
+    public long GetOrderNumber()
     {
         return m_order_number;
     }
