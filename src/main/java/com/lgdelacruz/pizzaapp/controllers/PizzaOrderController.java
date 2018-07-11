@@ -1,5 +1,7 @@
-package com.lgdelacruz.pizzaapp;
+package com.lgdelacruz.pizzaapp.controllers;
 
+import com.lgdelacruz.pizzaapp.models.Pizza;
+import com.lgdelacruz.pizzaapp.ToppingStringParser;
 import com.lgdelacruz.pizzaapp.inventoryprices.CheeseToPrice;
 import com.lgdelacruz.pizzaapp.inventoryprices.SauceToPrice;
 import com.lgdelacruz.pizzaapp.inventoryprices.SizeToPrice;
@@ -43,7 +45,6 @@ public class PizzaOrderController {
     public CheeseToPrice cheese() {
         return CheeseToPrice.Instance();
     }
-
 
     @GetMapping("/")
     public String LoadMainPage() {

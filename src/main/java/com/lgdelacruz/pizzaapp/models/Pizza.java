@@ -1,4 +1,4 @@
-package com.lgdelacruz.pizzaapp;
+package com.lgdelacruz.pizzaapp.models;
 
 import com.lgdelacruz.pizzaapp.inventoryprices.CheeseToPrice;
 import com.lgdelacruz.pizzaapp.inventoryprices.SauceToPrice;
@@ -28,7 +28,7 @@ public class Pizza {
         private long m_order_number;
         private ArrayList<String> m_toppings = new ArrayList<String>();
 
-        PizzaBuilder(long _order_number)
+        public PizzaBuilder(long _order_number)
         {
             // Initialize a default pizza to the first of every inventory
             SetSize(SizeToPrice.Instance().GetSizes().get(0));

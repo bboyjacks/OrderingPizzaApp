@@ -9,7 +9,7 @@ public class SauceToPrice {
     private static SauceToPrice m_sauce_to_price;
 
     /*
-     * Default com.lgdelacruz.pizzaapp.inventoryprices.SauceToPrice map
+     * Default SauceToPrice map
      */
     private SauceToPrice()
     {
@@ -41,6 +41,20 @@ public class SauceToPrice {
     public void AddSauce(String _sauce, Double price)
     {
         m_sauce_to_price_map.put(_sauce, price);
+    }
+
+    /*
+     * There must be at least 3 sauces
+     * in at all times. Delete the _sauce if
+     * it exists
+     *
+     */
+    public void DeleteSauce(String _sauce)
+    {
+        if (m_sauce_to_price_map.size() > 3)
+        {
+            m_sauce_to_price_map.remove(_sauce);
+        }
     }
 
     /*

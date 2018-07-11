@@ -48,6 +48,20 @@ public class ToppingsToPrice {
     }
 
     /*
+     * There must be at least 3 topping
+     * in at all times. Delete the topping if
+     * it exists
+     *
+     */
+    public void DeleteTopping(String _topping)
+    {
+        if (m_topping_to_price_map.size() > 3)
+        {
+            m_topping_to_price_map.remove(_topping);
+        }
+    }
+
+    /*
      * Gets an ArrayList of toppings available currently
      *
      * @return ArrayList of string

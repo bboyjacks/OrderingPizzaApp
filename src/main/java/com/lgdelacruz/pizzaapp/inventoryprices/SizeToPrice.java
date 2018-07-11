@@ -43,6 +43,20 @@ public class SizeToPrice {
     }
 
     /*
+     * There must be at least 3 size
+     * in at all times. Delete the size if
+     * it exists
+     *
+     */
+    public void DeleteSize(String _size)
+    {
+        if (m_size_to_price_map.size() > 3)
+        {
+            m_size_to_price_map.remove(_size);
+        }
+    }
+
+    /*
      * Gets an ArrayList of pizza sizes available currently
      *
      * @return ArrayList of string

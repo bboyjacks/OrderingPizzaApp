@@ -45,6 +45,21 @@ public class CheeseToPrice {
     }
 
     /*
+     * There must be at least 3 cheeses
+     * in at all times. Delete the cheese if
+     * it exists
+     *
+     */
+    public void DeleteCheese(String _cheese)
+    {
+        if (m_cheese_to_price_map.size() > 3)
+        {
+            m_cheese_to_price_map.remove(_cheese);
+        }
+    }
+
+
+    /*
      * Gets an ArrayList of cheeses available currently
      *
      * @return ArrayList of string
