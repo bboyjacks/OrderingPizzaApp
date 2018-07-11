@@ -71,4 +71,9 @@ public class ToppingsToPrice {
     {
         return m_topping_to_price_map.get(_topping);
     }
+
+    public Boolean IsToppingAnOption(String _topping)
+    {
+        return m_topping_to_price_map.containsKey(_topping);
+    }
 }

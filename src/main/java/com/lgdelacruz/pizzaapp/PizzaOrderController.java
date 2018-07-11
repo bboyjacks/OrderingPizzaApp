@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicLong;
 
 
@@ -25,12 +26,17 @@ public class PizzaOrderController {
             @RequestParam(name="cheese", required=true) String cheese,
             @RequestParam(name="topping", required=true) String topping
     ) {
-        Pizza pizza = new Pizza.PizzaBuilder(counter.incrementAndGet())
+        Pizza.PizzaBuilder pizza_builder = new Pizza.PizzaBuilder(counter.incrementAndGet())
                 .SetSize(size)
                 .SetSauce(sauce)
-                .SetCheese(cheese)
-                .AddTopping(topping)
-                .Build();
+                .SetCheese(cheese);
+
+        ArrayList<String> toppings = ToppingStringParser.ParseToppingStringsList(topping);
+
+        for (String topping_item : toppings)
+            pizza_builder = pizza_builder.AddTopping(topping_item);
+
+        Pizza pizza = pizza_builder.Build();
 
         model.addAttribute("order_num", pizza.GetOrderNumber());
         model.addAttribute("size", pizza.GetSize());

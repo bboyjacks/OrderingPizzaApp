@@ -55,8 +55,11 @@ public class Pizza {
 
         public PizzaBuilder AddTopping(String _topping)
         {
-            this.m_toppings.add(_topping);
-            this.m_price += ToppingsToPrice.Instance().GetToppingPrice(_topping);
+            if (ToppingsToPrice.Instance().IsToppingAnOption(_topping)) {
+                this.m_toppings.add(_topping);
+                this.m_price += ToppingsToPrice.Instance().GetToppingPrice(_topping);
+            }
+
             return this;
         }
 

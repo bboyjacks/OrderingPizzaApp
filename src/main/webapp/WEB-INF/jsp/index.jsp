@@ -59,13 +59,7 @@
         </select>
         <br>
         <p>Topping:</p>
-        <select name="topping">
-            <option value="pepperoni">pepperoni</option>
-            <option value="olives">olives</option>
-            <option value="pineapple">pineapple</option>
-            <option value="ham">ham</option>
-            <option value="sausage">sausage</option>
-        </select>
+        <input type="text" name="topping"/>
         <br>
         <br>
         <input type="submit" value="Order">
