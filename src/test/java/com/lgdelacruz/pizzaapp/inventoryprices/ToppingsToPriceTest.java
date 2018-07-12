@@ -8,13 +8,16 @@ public class ToppingsToPriceTest {
 
     @Test
     public void addTopping() {
-//        assertEquals(5, ToppingsToPrice.Instance().GetToppings().size());
-//        ToppingsToPrice.Instance().AddTopping("Secret Sauce", 2.0);
-//        assertEquals(6, ToppingsToPrice.Instance().GetToppings().size());
+        ToppingsToPrice.Instance().Reset();
+        assertEquals(5, ToppingsToPrice.Instance().GetToppings().size());
+        ToppingsToPrice.Instance().AddTopping("Secret Sauce", 2.0);
+        assertEquals(6, ToppingsToPrice.Instance().GetToppings().size());
     }
 
     @Test
     public void deleteTopping() {
+        ToppingsToPrice.Instance().Reset();
+
         // Toppings num cannot go less than 3
         ToppingsToPrice.Instance().DeleteTopping("ham");
         assertEquals(4, ToppingsToPrice.Instance().GetToppings().size());
@@ -28,7 +31,9 @@ public class ToppingsToPriceTest {
 
     @Test
     public void isToppingAnOption() {
-//        assertFalse(ToppingsToPrice.Instance().IsToppingAnOption("Doesn't exits"));
-//        assertTrue(ToppingsToPrice.Instance().IsToppingAnOption("ham"));
+        ToppingsToPrice.Instance().Reset();
+
+        assertFalse(ToppingsToPrice.Instance().IsToppingAnOption("Doesn't exits"));
+        assertTrue(ToppingsToPrice.Instance().IsToppingAnOption("ham"));
     }
 }

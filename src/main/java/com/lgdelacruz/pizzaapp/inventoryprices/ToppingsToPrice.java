@@ -15,6 +15,15 @@ public class ToppingsToPrice {
      */
     private ToppingsToPrice()
     {
+        Reset();
+    }
+
+    /*
+     * Resets the map to original
+     */
+    public void Reset()
+    {
+        m_topping_to_price_map.clear();
         m_topping_to_price_map.put("pepperoni", 1.0);
         m_topping_to_price_map.put("olives", 1.0);
         m_topping_to_price_map.put("pineapple", 1.5);

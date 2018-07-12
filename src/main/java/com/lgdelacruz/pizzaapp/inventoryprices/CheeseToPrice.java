@@ -14,6 +14,14 @@ public class CheeseToPrice {
      */
     private CheeseToPrice()
     {
+        Reset();
+    }
+
+    /*
+     * Resets map to original
+     */
+    public void Reset() {
+        m_cheese_to_price_map.clear();
         m_cheese_to_price_map.put("pepperjack", 1.0);
         m_cheese_to_price_map.put("swiss", 1.5);
         m_cheese_to_price_map.put("cheddar", 1.25);

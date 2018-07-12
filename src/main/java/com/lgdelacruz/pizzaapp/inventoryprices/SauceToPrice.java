@@ -13,6 +13,14 @@ public class SauceToPrice {
      */
     private SauceToPrice()
     {
+        Reset();
+    }
+
+    /*
+     * Resets map to original
+     */
+    public void Reset() {
+        m_sauce_to_price_map.clear();
         m_sauce_to_price_map.put("marinara", 1.0);
         m_sauce_to_price_map.put("pesto", 1.5);
         m_sauce_to_price_map.put("alfredo", 1.25);

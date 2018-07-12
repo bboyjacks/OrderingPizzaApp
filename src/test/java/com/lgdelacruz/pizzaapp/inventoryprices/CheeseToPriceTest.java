@@ -8,6 +8,7 @@ public class CheeseToPriceTest {
 
     @Test
     public void addCheese() {
+        CheeseToPrice.Instance().Reset();
         assertEquals(3, CheeseToPrice.Instance().GetCheeses().size());
         CheeseToPrice.Instance().AddCheese("Secret Cheese", 2.0);
         assertEquals(4, CheeseToPrice.Instance().GetCheeses().size());
@@ -15,6 +16,8 @@ public class CheeseToPriceTest {
 
     @Test
     public void deleteCheese() {
+        CheeseToPrice.Instance().Reset();
+
         // Cheese num cannot go less than 3
         CheeseToPrice.Instance().DeleteCheese("cheddar");
         assertEquals(3, CheeseToPrice.Instance().GetCheeses().size());

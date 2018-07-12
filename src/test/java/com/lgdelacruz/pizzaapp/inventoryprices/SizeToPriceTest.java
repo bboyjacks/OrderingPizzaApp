@@ -8,6 +8,7 @@ public class SizeToPriceTest {
 
     @Test
     public void setSize() {
+        SizeToPrice.Instance().Reset();
         assertEquals(3, SizeToPrice.Instance().GetSizes().size());
         SizeToPrice.Instance().SetSize("Secret Size", 2.0);
         assertEquals(4, SizeToPrice.Instance().GetSizes().size());
@@ -15,6 +16,8 @@ public class SizeToPriceTest {
 
     @Test
     public void deleteSize() {
+        SizeToPrice.Instance().Reset();
+
         // Size num cannot go less than 3
         SizeToPrice.Instance().DeleteSize("small");
         assertEquals(3, SizeToPrice.Instance().GetSizes().size());

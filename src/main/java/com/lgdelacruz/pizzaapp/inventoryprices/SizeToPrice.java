@@ -12,6 +12,14 @@ public class SizeToPrice {
      */
     private SizeToPrice()
     {
+        Reset();
+    }
+
+    /*
+     * Resets map to original
+     */
+    public void Reset() {
+        m_size_to_price_map.clear();
         m_size_to_price_map.put("small", 6.0);
         m_size_to_price_map.put("medium", 6.5);
         m_size_to_price_map.put("large", 6.25);
