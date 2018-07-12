@@ -31,7 +31,8 @@
             for (var key in json_response.m_size_to_price_map) {
                 if (json_response.m_size_to_price_map.hasOwnProperty(key)) {
                     var node = document.createElement("li");
-                    var textnode1 = document.createTextNode(key);
+                    var item = key + '      $' + json_response.m_size_to_price_map[key];
+                    var textnode1 = document.createTextNode(item);
                     node.appendChild(textnode1);
                     sizes_tag.appendChild(node);
 
@@ -55,7 +56,8 @@
             for (var key in json_response.m_sauce_to_price_map) {
                 if (json_response.m_sauce_to_price_map.hasOwnProperty(key)) {
                     var node = document.createElement("li");
-                    var textnode1 = document.createTextNode(key);
+                    var item = key + '      $' + json_response.m_sauce_to_price_map[key];
+                    var textnode1 = document.createTextNode(item);
                     node.appendChild(textnode1);
                     sauce_tag.appendChild(node);
 
@@ -78,8 +80,9 @@
             for (var key in json_response.m_topping_to_price_map) {
                 if (json_response.m_topping_to_price_map.hasOwnProperty(key)) {
                     var node = document.createElement("li");
-                    var textnode = document.createTextNode(key);
-                    node.appendChild(textnode);
+                    var item = key + '      $' + json_response.m_topping_to_price_map[key];
+                    var textnode1 = document.createTextNode(item);
+                    node.appendChild(textnode1);
                     toppings_tag.appendChild(node);
                 }
             }
@@ -96,7 +99,8 @@
             for (var key in json_response.m_cheese_to_price_map) {
                 if (json_response.m_cheese_to_price_map.hasOwnProperty(key)) {
                     var node = document.createElement("li");
-                    var textnode1 = document.createTextNode(key);
+                    var item = key + '      $' + json_response.m_cheese_to_price_map[key];
+                    var textnode1 = document.createTextNode(item);
                     node.appendChild(textnode1);
                     cheese_tag.appendChild(node);
 
