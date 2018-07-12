@@ -31,6 +31,9 @@ This is a small little application I made for a job coding challenge. It's a piz
  
    `java -jar target/pizzaorder-1.0.1.jar`
    
+4. On a web browser go to
+
+   `localhost:8080`
    
 # Demo of the Application
 
